@@ -50,8 +50,8 @@ class MenuTableViewController: UITableViewController {
                     for child in container.childViewControllers {
                         if child.restorationIdentifier == "master" {
                             let master = child as! MasterViewController
-                            master.text = data[indexPath.row]
-                            master.viewWillAppear(false)
+                            container.text = data[indexPath.row]
+                            container.viewWillAppear(false)
                         }
                     }
                     container.close()

@@ -20,9 +20,20 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var rightConstraint2: NSLayoutConstraint!
     @IBOutlet weak var rightConstraint3: NSLayoutConstraint!
     
+    @IBOutlet weak var campusLabel: UILabel!
+    
+    var text: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let text = text {
+            campusLabel.text = text
+        }
     }
 
     override func didReceiveMemoryWarning() {
