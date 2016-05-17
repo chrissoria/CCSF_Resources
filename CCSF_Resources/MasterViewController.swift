@@ -8,14 +8,22 @@
 
 import UIKit
 import MBProgressHUD
+import Parse
 
 class MasterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var resourceTableView: UITableView!
     var text: String?
+    
+    var parseClass: String!
+    
+    var resources: [PFObject]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let user = PFUser.currentUser()
         
         resourceTableView.dataSource = self
         resourceTableView.delegate = self
@@ -25,6 +33,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        parseAPICall()
         if let text = text {
             textLabel.text = text
         } else {
@@ -38,20 +47,45 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return resources?.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("resourceCell", forIndexPath: indexPath) as! ResourceTableViewCell
         
-        cell.resourceTitleLabel.text = "Resource Center Title"
-        cell.decriptionLabel.text = "Resource Center Description"
+        let resource = resources![indexPath.row]
         
-        print("row\(indexPath.row)")
+        let resourceTitle = resource["resourceTitle"] as! String
+        
+        cell.resourceTitleLabel.text = resourceTitle
+        //cell.decriptionLabel.text = "Resource Center Description"
+        
+        print("getting resource title")
         return cell
     }
     
-    
+    func parseAPICall() {
+        // construct PFQuery
+        let query = PFQuery(className: "Resources")
+        query.orderByAscending("_id")
+        query.limit = 20
+        // fetch data asynchronously
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if let objects = objects  {
+                // do something with the data fetched
+                print("data fetched")
+                self.resources = objects
+                print(PFQuery)
+                
+                self.resourceTableView.reloadData()
+            } else {
+                //                // handle error
+                print (error)
+                
+            }
+            
+        }
+    }
 
 
 }
