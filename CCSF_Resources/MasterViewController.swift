@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class MasterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -26,6 +27,8 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewWillAppear(animated)
         if let text = text {
             textLabel.text = text
+        } else {
+            textLabel.text = "CCSF"
         }
     }
 
@@ -39,11 +42,16 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("resourceCell", forIndexPath: indexPath)
-        cell.textLabel!.text = "row\(indexPath.row)"
+        let cell = tableView.dequeueReusableCellWithIdentifier("resourceCell", forIndexPath: indexPath) as! ResourceTableViewCell
+        
+        cell.resourceTitleLabel.text = "Resource Center Title"
+        cell.decriptionLabel.text = "Resource Center Description"
+        
         print("row\(indexPath.row)")
         return cell
     }
+    
+    
 
 
 }

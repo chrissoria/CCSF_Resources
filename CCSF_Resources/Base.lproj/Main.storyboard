@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -187,13 +188,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="526"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resourceCell" rowHeight="158" id="Qiv-H4-yuV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resourceCell" rowHeight="158" id="Qiv-H4-yuV" customClass="ResourceTableViewCell" customModule="CCSF_Resources" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qiv-H4-yuV" id="RwE-eX-69v">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="157.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resource Center Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qeh-1J-5N9">
+                                                    <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7O-PP-v1q">
+                                                    <rect key="frame" x="8" y="37" width="584" height="112.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="topMargin" secondItem="Qeh-1J-5N9" secondAttribute="top" id="FOE-R7-xTe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Qeh-1J-5N9" secondAttribute="trailing" id="MXa-l0-Ho3"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="Qeh-1J-5N9" secondAttribute="leading" id="mAK-n7-mTb"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="decriptionLabel" destination="n7O-PP-v1q" id="93U-c9-GxY"/>
+                                            <outlet property="resourceTitleLabel" destination="Qeh-1J-5N9" id="6ay-o3-w1z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
