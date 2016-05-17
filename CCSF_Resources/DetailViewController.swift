@@ -15,11 +15,16 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailTitle: UILabel!
     
+    @IBOutlet weak var detailView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let title = detail!["resourceTitle"] as? String
         detailTitle.text = title
+        
+        UIView.animateWithDuration(0.6) { () -> Void in
+            self.detailView.alpha = 1
+        }
 
         // Do any additional setup after loading the view.
     }
