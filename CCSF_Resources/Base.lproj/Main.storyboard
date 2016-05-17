@@ -210,6 +210,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="f5b-MR-Qcz"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="campusLabel" destination="eLv-GN-8RI" id="5Zp-QS-CIa"/>
                         <outlet property="masterView" destination="KSP-0M-kK5" id="R4P-Qj-e6T"/>
@@ -271,6 +272,65 @@
             </objects>
             <point key="canvasLocation" x="713" y="1104"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="xZN-n6-Z79">
+            <objects>
+                <viewController id="aRZ-1y-yRC" customClass="DetailViewController" customModule="CCSF_Resources" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pFc-wC-wWB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qk7-jc-DMA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8tD-ee-9Dl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="526"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHs-hN-By1">
+                                <rect key="frame" x="0.0" y="8" width="600" height="44"/>
+                                <color key="tintColor" red="0.98762309650000002" green="1" blue="0.99502727099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.75294117650000003" green="0.16078431369999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Title" id="MAv-q5-fJw">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ust-uH-GjL">
+                                            <connections>
+                                                <action selector="onBack:" destination="aRZ-1y-yRC" id="05W-LO-Y5A"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resource Center Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="618-nJ-Jjt">
+                                <rect key="frame" x="20" y="185" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g9-a4-wlm">
+                                <rect key="frame" x="20" y="214" width="560" height="195"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JHs-hN-By1" secondAttribute="trailing" id="38e-3W-oXU"/>
+                            <constraint firstItem="JHs-hN-By1" firstAttribute="width" secondItem="8tD-ee-9Dl" secondAttribute="width" id="Ts8-nl-dBT"/>
+                            <constraint firstItem="JHs-hN-By1" firstAttribute="top" secondItem="pFc-wC-wWB" secondAttribute="bottom" constant="8" id="t97-tc-dpr"/>
+                            <constraint firstItem="JHs-hN-By1" firstAttribute="leading" secondItem="8tD-ee-9Dl" secondAttribute="leading" id="ueg-ag-VhJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qdV-5a-x8I"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="detailTitle" destination="618-nJ-Jjt" id="YW3-zB-iLi"/>
+                        <segue destination="XUm-jY-U1Q" kind="unwind" identifier="unwindToMenu" unwindAction="unwindToMenu:" id="mA6-jt-9e5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFB-Cx-Jvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XUm-jY-U1Q" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-856" y="1142"/>
+        </scene>
         <!--Master View Controller-->
         <scene sceneID="V3J-sd-FFf">
             <objects>
@@ -293,20 +353,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="526"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resourceCell" rowHeight="158" id="Qiv-H4-yuV" customClass="ResourceTableViewCell" customModule="CCSF_Resources" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="resourceCell" rowHeight="158" id="Qiv-H4-yuV" customClass="ResourceTableViewCell" customModule="CCSF_Resources" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qiv-H4-yuV" id="RwE-eX-69v">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="157.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="157.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resource Center Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qeh-1J-5N9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Resource Center Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qeh-1J-5N9">
                                                     <rect key="frame" x="8" y="8" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7O-PP-v1q">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7O-PP-v1q">
                                                     <rect key="frame" x="8" y="37" width="584" height="112.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -315,13 +375,18 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="topMargin" secondItem="Qeh-1J-5N9" secondAttribute="top" id="FOE-R7-xTe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="n7O-PP-v1q" secondAttribute="trailing" id="HhB-BI-O9u"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Qeh-1J-5N9" secondAttribute="trailing" id="MXa-l0-Ho3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="n7O-PP-v1q" secondAttribute="bottom" id="Opv-6b-cyF"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="n7O-PP-v1q" secondAttribute="leading" id="Pou-Ve-AaI"/>
+                                                <constraint firstItem="n7O-PP-v1q" firstAttribute="centerX" secondItem="RwE-eX-69v" secondAttribute="centerX" id="g7f-Ap-Ttf"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="Qeh-1J-5N9" secondAttribute="leading" id="mAK-n7-mTb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="decriptionLabel" destination="n7O-PP-v1q" id="93U-c9-GxY"/>
                                             <outlet property="resourceTitleLabel" destination="Qeh-1J-5N9" id="6ay-o3-w1z"/>
+                                            <segue destination="aRZ-1y-yRC" kind="push" identifier="detailsSegue" id="31V-Td-3qh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -337,6 +402,7 @@
                             <constraint firstItem="n9u-VS-zj6" firstAttribute="centerX" secondItem="cie-qy-Y6n" secondAttribute="centerX" id="yoo-9X-olF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ttP-fH-Xab"/>
                     <connections>
                         <outlet property="resourceTableView" destination="DK8-Po-lT1" id="rAK-XR-8tg"/>
                         <outlet property="textLabel" destination="n9u-VS-zj6" id="QGw-Co-T8U"/>
@@ -351,7 +417,6 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Gjl-So-EiV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="t0X-XV-6Ab">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

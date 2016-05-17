@@ -61,7 +61,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
         cell.resourceTitleLabel.text = resourceTitle
         cell.decriptionLabel.text = description
         
-        print("getting resource info")
+        print(resource)
         return cell
     }
     
@@ -86,7 +86,21 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
             }
             
         }
+        
     }
 
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "detailsSegue") {
+            let cell = sender as! UITableViewCell
+            let indexPath = resourceTableView.indexPathForCell(cell)
+            let detail = resources![indexPath!.row]
+            
+            let detailViewController = segue.destinationViewController as! DetailViewController
+            detailViewController.detail = detail
+            print(detail)
+        }
+    }
+    
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
 }
