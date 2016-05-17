@@ -56,26 +56,27 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
         let resource = resources![indexPath.row]
         
         let resourceTitle = resource["resourceTitle"] as! String
+        let description = resource["description"] as! String
         
         cell.resourceTitleLabel.text = resourceTitle
-        //cell.decriptionLabel.text = "Resource Center Description"
+        cell.decriptionLabel.text = description
         
-        print("getting resource title")
+        print("getting resource info")
         return cell
     }
     
     func parseAPICall() {
         // construct PFQuery
         let query = PFQuery(className: "Resources")
-        query.orderByAscending("_id")
+        query.orderByAscending("id")
         query.limit = 20
         // fetch data asynchronously
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if let objects = objects  {
                 // do something with the data fetched
                 print("data fetched")
                 self.resources = objects
-                print(PFQuery)
+                //print(PFQuery)
                 
                 self.resourceTableView.reloadData()
             } else {
