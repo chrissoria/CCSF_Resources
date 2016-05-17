@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '77E6348CACC730FBBAA368A3'
+               BlueprintIdentifier = '6D89689E76F8DE747EF64320'
                BlueprintName = 'Pods-CCSF_Resources'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_CCSF_Resources.framework'>

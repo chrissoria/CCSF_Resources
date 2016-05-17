@@ -6,6 +6,7 @@ use_frameworks!
 target 'CCSF_Resources' do
 
     pod 'MBProgressHUD'
+    pod 'Parse'
 
 end
 

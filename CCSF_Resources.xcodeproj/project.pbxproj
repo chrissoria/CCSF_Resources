@@ -15,6 +15,7 @@
 		54888A1F1CE8743000E6990C /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54888A1E1CE8743000E6990C /* MenuTableViewController.swift */; };
 		54888A211CE8745700E6990C /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54888A201CE8745700E6990C /* ContainerViewController.swift */; };
 		54888A231CE8747200E6990C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54888A221CE8747200E6990C /* MasterViewController.swift */; };
+		54B792CF1CEB0A6F0095715A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B792CE1CEB0A6F0095715A /* LoginViewController.swift */; };
 		D18B63A46B95557626CB4C82 /* Pods_CCSF_Resources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0860B9FB6B2C42D2784ADAC /* Pods_CCSF_Resources.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		54888A1E1CE8743000E6990C /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		54888A201CE8745700E6990C /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		54888A221CE8747200E6990C /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		54B792CE1CEB0A6F0095715A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0860B9FB6B2C42D2784ADAC /* Pods_CCSF_Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCSF_Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -52,6 +54,7 @@
 				54888A221CE8747200E6990C /* MasterViewController.swift */,
 				54888A201CE8745700E6990C /* ContainerViewController.swift */,
 				54888A1E1CE8743000E6990C /* MenuTableViewController.swift */,
+				54B792CE1CEB0A6F0095715A /* LoginViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54B792CF1CEB0A6F0095715A /* LoginViewController.swift in Sources */,
 				54888A231CE8747200E6990C /* MasterViewController.swift in Sources */,
 				54888A0B1CE84B6700E6990C /* AppDelegate.swift in Sources */,
 				54648B9E1CEAA85F00C4C504 /* ResourceTableViewCell.swift in Sources */,
