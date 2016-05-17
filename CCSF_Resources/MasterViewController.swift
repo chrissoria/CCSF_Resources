@@ -8,12 +8,16 @@
 
 import UIKit
 
-class MasterViewController: UIViewController {
+class MasterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var resourceTableView: UITableView!
     var text: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resourceTableView.dataSource = self
+        resourceTableView.delegate = self
 
 
     }
@@ -30,7 +34,16 @@ class MasterViewController: UIViewController {
 
     }
     
-
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("resourceCell", forIndexPath: indexPath)
+        cell.textLabel!.text = "row\(indexPath.row)"
+        print("row\(indexPath.row)")
+        return cell
+    }
 
 
 }
