@@ -16,12 +16,38 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailTitle: UILabel!
     
     @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var fullDescriptionLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var mondayLabel: UILabel!
+    @IBOutlet weak var tuesdayLabel: UILabel!
+    @IBOutlet weak var wednesdayLabel: UILabel!
+    @IBOutlet weak var thursdayLabel: UILabel!
+    @IBOutlet weak var fridayLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //displaying data
         let title = detail!["resourceTitle"] as? String
         detailTitle.text = title
+        let fullDescription = detail!["fullDescription"] as? String
+        fullDescriptionLabel.text = fullDescription
+        let resouceLocation = detail!["location"] as? String
+        locationLabel.text = resouceLocation
         
+        //hours
+        let monday = detail!["monday"] as? String
+        mondayLabel.text = "M: "+monday!
+        let tuesday = detail!["tuesday"] as? String
+        tuesdayLabel.text = "T: "+tuesday!
+        let wednesday = detail!["wednesday"] as? String
+        wednesdayLabel.text = "W: "+wednesday!
+        let thursday = detail!["thursday"] as? String
+        thursdayLabel.text = "TH: "+thursday!
+        let friday = detail!["friday"] as? String
+        fridayLabel.text = "F: "+friday!
+        
+        //animating view
         UIView.animateWithDuration(0.6) { () -> Void in
             self.detailView.alpha = 1
         }
