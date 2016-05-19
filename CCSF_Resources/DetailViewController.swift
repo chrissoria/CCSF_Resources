@@ -23,9 +23,13 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var wednesdayLabel: UILabel!
     @IBOutlet weak var thursdayLabel: UILabel!
     @IBOutlet weak var fridayLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: detailView.frame.size.height)
         
         //displaying data
         let title = detail!["resourceTitle"] as? String
